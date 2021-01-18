@@ -14837,12 +14837,27 @@ module.exports = g;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider */ "./src/js/slider.js");
 /* harmony import */ var _modules_modals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modals */ "./src/js/modules/modals.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
+
 
 
 window.addEventListener('DOMContentLoaded', function () {
-  Object(_modules_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Object(_modules_modals__WEBPACK_IMPORTED_MODULE_1__["default"])(); // Init tabs in Glasing section
+
+  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    headerSelector: '.glazing_slider ',
+    tabSelector: '.glazing_block',
+    contentSelector: '.glazing_content',
+    activeClass: 'active'
+  }); // Init tabs in Decoration section
+
+  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    headerSelector: '.decoration_slider',
+    tabSelector: '.no_click',
+    contentSelector: '.decoration_content > div > div',
+    activeClass: 'after_click'
+  });
 });
-console.log(1);
 
 /***/ }),
 
@@ -14894,11 +14909,67 @@ var modals = function modals() {
   }
 
   bindModal('.popup_engineer_btn', '.popup_engineer', '.popup_engineer .popup_close');
-  bindModal('.phone_link', '.popup', '.popup .popup_close');
-  showModalByTime('.popup', 60000);
+  bindModal('.phone_link', '.popup', '.popup .popup_close'); // showModalByTime('.popup', 60000);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modals);
+
+/***/ }),
+
+/***/ "./src/js/modules/tabs.js":
+/*!********************************!*\
+  !*** ./src/js/modules/tabs.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var tabs = function tabs(_ref) {
+  var headerSelector = _ref.headerSelector,
+      tabSelector = _ref.tabSelector,
+      contentSelector = _ref.contentSelector,
+      activeClass = _ref.activeClass;
+  var header = document.querySelector(headerSelector);
+  var tab = document.querySelectorAll(tabSelector);
+  var content = document.querySelectorAll(contentSelector);
+
+  function hideTabContent() {
+    content.forEach(function (item) {
+      item.style.display = 'none';
+    });
+    tab.forEach(function (item) {
+      item.classList.remove(activeClass);
+    });
+  }
+
+  function showTabConten() {
+    var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+    content[i].style.display = 'block';
+    tab[i].classList.add(activeClass);
+  }
+
+  hideTabContent();
+  showTabConten();
+  header.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if (target && target.closest(tabSelector)) {
+      tab.forEach(function (item, i) {
+        if (target.closest(tabSelector) === item) {
+          hideTabContent();
+          showTabConten(i);
+        }
+      });
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (tabs);
 
 /***/ }),
 
