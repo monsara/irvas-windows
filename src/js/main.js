@@ -2,10 +2,14 @@ import './slider';
 import modals from './modules/modals';
 import tabs from './modules/tabs';
 import forms from './modules/forms';
+import changeModalState from './modules/changeModalState';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
+    let modalState = {};
+
+    changeModalState(modalState);
     modals();
     // Init tabs in Glasing section
     tabs({
@@ -21,5 +25,12 @@ window.addEventListener('DOMContentLoaded', () => {
         contentSelector: '.decoration_content > div > div',
         activeClass: 'after_click',
     });
-    forms();
+    tabs({
+        headerSelector: '.balcon_icons',
+        tabSelector: '.balcon_icons_img',
+        contentSelector: '.big_img img',
+        activeClass: 'do_image_more',
+        display: 'inline-block',
+    });
+    forms(modalState);
 });
