@@ -16,14 +16,14 @@ of Android/iOS, etc.
 
 ### HTML/CSS
 
-- SASS/SCSS (variables, SCSS modules)
+- SASS/SCSS (SCSS modules, CSS Animation, CSS Flexbox)
 
 ### JavaScript features
 
 - Using modules for features
 - Opening modal windows when clicking on modal triggers and after a set time
 - Сlosing modal windows by pressing close button, modal backdrop and after a set time
-- Using FetchAPI for posting form data to the server
+- Using Fetch API for posting form data to the server
 - Switching tabs with animation
 - Showing the remaining time in the promo timer
 - Showing big images in popup window in works gallary
