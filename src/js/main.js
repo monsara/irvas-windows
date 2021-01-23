@@ -3,11 +3,27 @@ import modals from './modules/modals';
 import tabs from './modules/tabs';
 import forms from './modules/forms';
 import changeModalState from './modules/changeModalState';
+import timer from './modules/timer';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
     let modalState = {};
+
+    // #region Set automatic deadline
+    const daysToFinish = 3;
+    let deadline;
+
+    // let deadline = '2021.02.01';
+
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const day = date.getDate();
+
+    deadline = new Date(year, month, day);
+    deadline.setDate(deadline.getDate() + daysToFinish);
+    //#endregion
 
     changeModalState(modalState);
     modals();
@@ -33,4 +49,5 @@ window.addEventListener('DOMContentLoaded', () => {
         display: 'inline-block',
     });
     forms(modalState);
+    timer('.container1', deadline);
 });
