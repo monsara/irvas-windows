@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const webpack = require('webpack-stream');
 const browsersync = require('browser-sync');
 
-// const dist = "./dist/";
+// const dist = './dist/';
 const dist = '/Applications/MAMP/htdocs/test'; // Адрес к серверу
 
 gulp.task('copy-html', () => {
