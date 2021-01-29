@@ -3,10 +3,6 @@ Add JavaScript logic for the web page components according to the tasks from the
 
 https://monsara.github.io/irvas-window/dist
 
-Add logic to the landing page according to the tasks from the course
-on Udemy platform: "Practical JavaScript (Advanced)"
-["Practical JavaScript (Advanced)"](https://www.udemy.com/course/javascript_practice/)
-
 ## Browser Support
 
 New browsers — Firefox, Chrome, Opera, Microsoft Edge and IE 11, newer versions
