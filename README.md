@@ -1,5 +1,5 @@
 # irvas-windows
-Add JavaScript logic for the web page components according to the tasks from the course "Practical JavaScript (advanced level)" on Udemy platform.
+Add JavaScript logic for the web page components according to the tasks from the course ["Practical JavaScript (Advanced)"](https://www.udemy.com/course/javascript_practice/) on Udemy platform.
 
 https://monsara.github.io/irvas-window/dist
 
