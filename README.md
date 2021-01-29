@@ -1,5 +1,5 @@
 # irvas-windows
-Add logic to the landing page according to the tasks from the course on Udemy platform: "Practical JavaScript (advanced level)"
+Add JavaScript logic for the web page components according to the tasks from the course "Practical JavaScript (advanced level)" on Udemy platform.
 
 https://monsara.github.io/irvas-window/dist
 
